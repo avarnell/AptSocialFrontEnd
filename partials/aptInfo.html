@@ -1,0 +1,20 @@
+<div class='container content'>
+  <div class='page-header'>
+    <h1>{{user.name}} <small> Apartment Info</small></h1>
+  </div>
+    <form>
+      <div class='form-group'>
+        <label> Apartment Building
+          <input type='text' ng-model='aptBuilding'>
+        </label>
+      </div>
+      <div class='form-group'>
+        <label> Apartment Number
+          <input type='text' ng-model='aptNumber'>
+        </label>
+      </div>
+    <button class='btn btn-primary' ng-click='submitInfo()'>Submit Info</button>
+  </form>
+
+
+</div>

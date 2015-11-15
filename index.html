@@ -5,8 +5,10 @@
   <script type="text/javascript" src='/bower_components/angular/angular.min.js'></script>
   <script type="text/javascript" src='/bower_components/angular-route/angular-route.min.js'></script>
   <script type="text/javascript" src='/bower_components/angular-facebook/lib/angular-facebook.js'></script>
+  <script type="text/javascript" src='/bower_components/angular-cookies/angular-cookies.min.js'></script>
   <script type="text/javascript" src='/js/controller.js'></script>
   <script type="text/javascript" src='/js/services.js'></script>
+
   <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
   <base href="/">
@@ -31,9 +33,13 @@
                                 <li class="active"><a href="/" class="">Home</a></li>
                                 <li class="active"><a href="/about" class="">About</a></li>
                             </ul>
-                            <ul class="nav navbar-nav pull-right">
+                            <ul class="nav navbar-nav pull-right" ng-show='!user.name'>
                                 <li class=""><a href="/login">Login</a></li>
                                 <li class=""><a href="/signup">Sign up</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav pull-right" ng-show='user.name'>
+                                <li class=''><a href="/profile">{{user.name}}</a></li>
+                                <li class=''><a href="#" ng-click='logout()'>Logout</a></li>
                             </ul>
                         </div>
                     </div>
